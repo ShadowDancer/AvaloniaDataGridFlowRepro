@@ -1,0 +1,22 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:AvaloniaFlowRepro.ViewModels;assembly=AvaloniaFlowRepro"
+        xmlns:r="clr-namespace:AvaloniaFlowRepro;assembly=AvaloniaFlowRepro"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="AvaloniaFlowRepro.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="AvaloniaFlowRepro">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+  <DataGrid Items="{Binding Items}">
+    <DataGrid.Columns>
+      <DataGridTextColumn Header="Text" Binding="{Binding Name}"/>
+      <r:CustomColumn Header="Column"/>
+    </DataGrid.Columns>
+  </DataGrid>
+
+</Window>
