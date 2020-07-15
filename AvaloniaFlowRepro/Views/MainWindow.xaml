@@ -12,10 +12,11 @@
     <Design.DataContext>
         <vm:MainWindowViewModel/>
     </Design.DataContext>
-  <DataGrid Items="{Binding Items}">
+  <DataGrid Items="{Binding Items}" TextBlock.Foreground="Black">
     <DataGrid.Columns>
       <DataGridTextColumn Header="Text" Binding="{Binding Name}"/>
       <r:CustomColumn Header="Column"/>
+      <DataGridTextColumn Header="Text" Binding="{Binding Name}"/>
     </DataGrid.Columns>
   </DataGrid>
 

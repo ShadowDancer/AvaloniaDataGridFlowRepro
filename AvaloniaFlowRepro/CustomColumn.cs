@@ -1,17 +1,23 @@
 ﻿using Avalonia.Controls;
 using Avalonia.Controls.Utils;
 using Avalonia.Interactivity;
+using Avalonia.Media;
 
 namespace AvaloniaFlowRepro
 {
     public class CustomColumn : DataGridBoundColumn
     {
+
+        TextBox _lastTb;
+
+
         protected override IControl GenerateEditingElementDirect(DataGridCell cell, object dataItem)
         {
-
-            ListBox lb = new ListBox();
-            lb.Height = 100;
-            return lb;
+            _lastTb = new TextBox()
+            {
+                Foreground = Brushes.Black
+            };
+            return _lastTb;
         }
 
         protected override IControl GenerateElement(DataGridCell cell, object dataItem)
@@ -21,7 +27,8 @@ namespace AvaloniaFlowRepro
 
         protected override object PrepareCellForEdit(IControl editingElement, RoutedEventArgs editingEventArgs)
         {
-            return null;
+            ((TextBox)editingElement).Text = "VEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEERY LONG TEXT";
+            return "VEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEERY LONG TEXT";
         }
     }
 }
